@@ -1,17 +1,19 @@
 package dev.martabernardo;
 
-/**
- * Hello world!
- */
+import dev.martabernardo.controllers.SecuenceController;
+
 public final class App {
     private App() {
     }
-
-    /**
-     * Says hello to the world.
-     * @param args The arguments of the program.
-     */
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        SecuenceController secuenceController = SecuenceController.getInstance();
+        String adnSecuence = "ATCG";
+        String result = secuenceController.requestSecuence(adnSecuence);
+        System.out.println("DNA Secuence: " + adnSecuence);
+        System.out.println("RNA Secuence: " + result);
+        adnSecuence = "CCGA";
+        result = secuenceController.requestSecuence(adnSecuence);
+        System.out.println("DNA Secuence: " + adnSecuence);
+        System.out.println("RNA Secuence: " + result);
     }
 }
