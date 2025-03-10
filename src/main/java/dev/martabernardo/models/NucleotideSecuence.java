@@ -1,4 +1,4 @@
-package dev.martabernardo.views;
+package dev.martabernardo.models;
 
 public class NucleotideSecuence {
 
