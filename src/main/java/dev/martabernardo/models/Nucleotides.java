@@ -7,10 +7,18 @@ public enum Nucleotides {
     THYMINE("T", "A");
 
     private final String dnaNucleotide;
-    private final String rnaComplement;
+    private final String rnaNucleotide;
 
     Nucleotides(String dnaNucleotide, String rnaComplement) {
         this.dnaNucleotide = dnaNucleotide;
-        this.rnaComplement = rnaComplement;
+        this.rnaNucleotide = rnaComplement;
+    }
+
+    public String getDnaNucleotide() {
+        return dnaNucleotide;
+    }
+
+    public String getRnaNucleotide() {
+        return rnaNucleotide;
     }
 }
