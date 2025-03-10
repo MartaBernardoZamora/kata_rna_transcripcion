@@ -1,5 +1,7 @@
 package dev.martabernardo.services;
 
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -7,6 +9,8 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.instanceOf;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
+
+
 
 public class SecuenceServiceTest {
     SecuenceService secuenceService;
@@ -27,5 +31,16 @@ public class SecuenceServiceTest {
         String result = secuenceService.transcribe(adnSecuence);
         assertThat(result, is(expected));
 
+    }
+
+    @Test
+    public void testSecuenceTranscribeInvalid() {
+        String adnSecuence = "ATD"; 
+
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
+            secuenceService.transcribe(adnSecuence);
+        });
+
+        assertThat(exception.getMessage(), is("Invalid nucleotide: D"));
     }
 }
