@@ -36,7 +36,6 @@ public class SecuenceServiceTest {
     @Test
     public void testSecuenceTranscribeInvalid() {
         String adnSecuence = "ATD"; 
-
         Exception exception = assertThrows(IllegalArgumentException.class, () -> {
             secuenceService.transcribe(adnSecuence);
         });
