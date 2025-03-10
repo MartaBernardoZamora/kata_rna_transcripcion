@@ -8,4 +8,8 @@ public class NucleotideSecuence {
         this.secuence = secuence;
     }
 
+    public String getSecuence() {
+        return secuence;
+    }
+
 }
