@@ -15,4 +15,11 @@ public class NucleotideSecuenceTest {
         assertThat(nucleotideSecuence, is(instanceOf(NucleotideSecuence.class)));
 
     }
+    @Test
+    public void testGetSecuence() {
+        String secuence = "ATCG";
+        NucleotideSecuence nucleotideSecuence = new NucleotideSecuence(secuence);
+
+        assertThat(nucleotideSecuence.getSecuence(), is(secuence));
+    }
 }
