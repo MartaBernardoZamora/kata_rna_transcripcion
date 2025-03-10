@@ -21,4 +21,13 @@ public class SecuenceControllerTest {
         assertThat(secuenceController, is(equalTo(secuenceController2)));
         assertThat(secuenceController, is(instanceOf(SecuenceController.class)));
     }
+
+    @Test
+    public void testRequestSecuence() {
+        SecuenceController secuenceController = SecuenceController.getInstance();
+        String adnSecuence = "ATCG";
+        String expected = "UAGC";
+        String result = secuenceController.requestSecuence(adnSecuence);
+        assertThat(result, is(expected));
+    }
 }
